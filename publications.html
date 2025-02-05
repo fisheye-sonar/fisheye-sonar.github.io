@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="./js/hidebib.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FishEye: Publications</title>
+
+
+</head>
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("navbar.html", function () {
+                $("#navbar_publications").addClass("active");
+            });
+        });
+    </script>
+    <!--end of Navigation bar-->
+
+    <div class="text-container">
+        <h2>Publications</h2>
+
+    </div>
+
+    <div class="publication-box">
+        <img src="publications/CFwTRoSV_thumbnail.png" style="max-width: 200px;" alt="Image" class="publication-image">
+        <div class="publication-text">
+            <li id="CFwTRoSV">
+                <b>Counting Fish with Temporal Representations of Sonar Video</b>
+                <br>
+                <i>Kai Van Brunt, Justin Kay Timm Haucke, Pietro Perona, Grant Van Horn, Sara Beery</i>
+                <br>
+                <i>European Conference on Computer Vision (ECCV) 2024 Workshop on CV4Animals: Computer Vision for Animal
+                    Behavior Tracking and Modeling</i>
+                <br>
+                Accurate estimates of salmon escapement—the number of fish migrating upstream to spawn—are key data for
+                con- servation
+                and fishery management. Existing methods for salmon counting using high-resolution imaging sonar hard-
+                ware are
+                non-invasive and compatible with computer vi- sion processing. Prior work in this area has utilized ob-
+                ject detection
+                and tracking based methods for automated salmon counting. However, these techniques remain in-
+                accessible to many sonar
+                deployment sites due to limited compute and connectivity in the field. We propose an alter- native
+                lightweight computer
+                vision method for fish count- ing based on analyzing echograms—temporal representa- tions that compress
+                several hundred
+                frames of imaging sonar video into a single image. We predict upstream and downstream counts within
+                200-frame time
+                windows directly from echograms using a ResNet-18 model, and propose a set of domain-specific image
+                augmentations and a
+                weakly- supervised training protocol to further improve results. We achieve a count error of 23% on
+                representative data
+                from the Kenai River in Alaska, demonstrating the feasibility of our approach.
+                <br>
+                <!-- <a href="!!!PROJECTPAGELINK!!!"><img class="inline-icon" style="height:1em;vertical-align:middle;"
+                            src="./assets/link.svg" /></a>&nbsp;
+                    <a href="!!!ARXIVLINK!!!"><img class="inline-icon" style="height:1em;vertical-align:middle;"
+                            src="./assets/arxiv.svg" /></a>&nbsp;
+                    <a href="!!!GITHUBLINK!!!"><img class="inline-icon" style="height:1em;vertical-align:middle;"
+                            src="./assets/github.svg" /></a>&nbsp; -->
+                <a class="togglebib" href="javascript:togglebib('CFwTRoSV')"><img class="inline-icon"
+                        style="height:1em;vertical-align:middle;" src="./assets/bibtex.svg" /></a>
+                <p class="bib">
+                    @inproceedings{vanbrunt2024Counting,<br>
+                    title={Counting Fish with Temporal Representations of Sonar Video},<br>
+                    author={Van Brunt, Kai and Kay, Justin and Haucke, Timm and Perona, Pietro and Van Horn, Grant and
+                    Beery, Sara },<br>
+                    year={2024},<br>
+                    booktitle={uropean Conference on Computer Vision (ECCV) 2024 Workshop on CV4Animals: Computer Vision for Animal
+                    Behavior Tracking and Modeling}<br>
+                    }
+                </p>
+            </li>
+        </div>
+
+    </div>
+
+
+    <div class="publication-box">
+        <img src="publications/align_and_distill_thumbnail.png" style="max-width: 200px;" alt="Image"
+            class="publication-image">
+        <div class="publication-text">
+            <li id="alignanddistill">
+                <b>Align and Distill: Unifying and Improving Domain Adaptive Object Detection</b>
+                <br>
+                <i>Justin Kay, Timm Haucke, Suzanne Stathatos, Siqi Deng, Erik Young, Pietro Perona, Sara Beery, Grant
+                    Van Horn</i>
+                <br>
+                <i>arXiv preprint</i>
+                <br>
+                Object detectors often perform poorly on data that differs from their training set. Domain adaptive
+                object detection
+                (DAOD) methods have recently demonstrated strong results on addressing this challenge. Unfortunately, we
+                identify
+                systemic benchmarking pitfalls that call past results into question and hamper further progress: (a)
+                Overestimation of
+                performance due to underpowered baselines, (b) Inconsistent implementation practices preventing
+                transparent comparisons
+                of methods, and (c) Lack of generality due to outdated backbones and lack of diversity in benchmarks. We
+                address these
+                problems by introducing: (1) A unified benchmarking and implementation framework, Align and Distill
+                (ALDI), enabling
+                comparison of DAOD methods and supporting future development, (2) A fair and modern training and
+                evaluation protocol for
+                DAOD that addresses benchmarking pitfalls, (3) A new DAOD benchmark dataset, CFC-DAOD, enabling
+                evaluation on diverse
+                real-world data, and (4) A new method, ALDI++, that achieves state-of-the-art results by a large margin.
+                ALDI++
+                outperforms the previous state-of-the-art by +3.5 AP50 on Cityscapes to Foggy Cityscapes, +5.7 AP50 on
+                Sim10k to
+                Cityscapes (where ours is the only method to outperform a fair baseline), and +0.6 AP50 on CFC Kenai to
+                Channel. Our
+                framework, dataset, and state-of-the-art method offer a critical reset for DAOD and provide a strong
+                foundation for
+                future research.
+                <br>
+                <a href="https://aldi-daod.github.io"><img class="inline-icon" style="height:1em;vertical-align:middle;"
+                        src="./assets/link.svg" /></a>&nbsp;
+                <a href="https://arxiv.org/abs/2403.12029"><img class="inline-icon"
+                        style="height:1em;vertical-align:middle;" src="./assets/arxiv.svg" /></a>&nbsp;
+                <a href="https://github.com/justinkay/aldi"><img class="inline-icon"
+                        style="height:1em;vertical-align:middle;" src="./assets/github.svg" /></a>&nbsp;
+                <a class="togglebib" href="javascript:togglebib('alignanddistill')"><img class="inline-icon"
+                        style="height:1em;vertical-align:middle;" src="./assets/bibtex.svg" /></a>
+
+                <p class="bib">
+                    @misc{kay2024align,<br>
+                    title={Align and Distill: Unifying and Improving Domain Adaptive Object Detection},<br>
+                    author={Justin Kay and Timm Haucke and Suzanne Stathatos and Siqi Deng and Erik Young and Pietro
+                    Perona and Sara Beery
+                    and Grant Van Horn},<br>
+                    year={2024},<br>
+                    eprint={2403.12029},<br>
+                    archivePrefix={arXiv},<br>
+                    primaryClass={cs.CV}<br>
+                    }
+                </p>
+            </li>
+        </div>
+
+    </div>
+    <div class="publication-box">
+        <img src="publications/Unsupervised_Domain_Adaptation_case_study_thumbnail.png" style="max-width: 200px;"
+            alt="Image" class="publication-image">
+        <div class="publication-text">
+            <li id="unsup_dom_case_study">
+                <b>Unsupervised Domain Adaptation in the Real World: A Case Study in Sonar Video</b>
+                <br>
+                <i>Justin Kay, Suzanne Stathatos, Siqi Deng, Erik Young, Pietro Perona, Sara Beery, Grant Van Horn</i>
+                <br>
+                <i>NeurIPS 2023 Workshop on Computational Sustainability: Promises and Pitfalls from Theory to
+                    Deployment</i>
+                <br>
+                In real world applications of machine learning, adaptation to new domains (e.g. new regions, new
+                populations, new
+                sensors, or new points in time) has been shown to be an ongoing challenge. In unsupervised domain
+                adaptation, the
+                assumption is that the user has access to a large labeled set of source domain data, and the goal is to
+                adapt to a new
+                target domain without the use of any labeled target data. The open question is how unlabeled samples
+                from
+                the target
+                domain should be incorporated into the model training process. In this work we document our experiences
+                applying
+                recently proposed unsupervised domain adaption techniques for object detection to a novel application
+                domain: counting
+                fish in sonar video. We find that: (i) prior works that show progress on standard domain adaptation
+                benchmark datasets
+                do not necessarily translate to our domain, (ii) validation methods are often unrealistic in these prior
+                works, and
+                (iii) higher complexity (in terms of implementation and parameters) techniques work better. We aim for
+                this
+                work to be a
+                useful guide for other practitioners looking to use unsupervised domain adaptation techniques in real
+                world
+                applications.
+                <br>
+                <a class="togglebib" href="javascript:togglebib('unsup_dom_case_study')"><img class="inline-icon"
+                        style="height:1em;vertical-align:middle;" src="./assets/bibtex.svg" /></a>
+
+                <p class="bib">
+                    @inproceedings{kay2023unsupervised,<br>
+                    title={Unsupervised Domain Adaptation in the Real World: A Case Study in Sonar Video},<br>
+                    author={Kay, Justin and Stathatos, Suzanne and Deng, Siqi and Young, Erik and Perona, Pietro and
+                    Beery, Sara and Van
+                    Horn, Grant},<br>
+                    booktitle={NeurIPS 2023 Computational Sustainability: Promises and Pitfalls from Theory to
+                    Deployment}<br>
+                    }
+                </p>
+            </li>
+        </div>
+
+    </div>
+    <div class="publication-box">
+        <img src="publications/caltech_fish_counting_dataset_thumbnail.png" style="max-width: 200px;" alt="Image"
+            class="publication-image">
+        <div class="publication-text">
+            <li id="CTFCTS">
+                <b>The Caltech Fish Counting Dataset: A Benchmark for Multiple-Object Tracking and Counting</b>
+                <br>
+                <i>Justin Kay, Peter Kulits, Suzanne Stathatos, Siqi Deng, Erik Young, Sara Beery, Grant Van Horn,
+                    Pietro Perona</i>
+                <br>
+                <i>European Conference on Computer Vision (ECCV) 2022</i>
+                <br>
+                We present the Caltech Fish Counting Dataset (CFC), a large-scale dataset for detecting, tracking, and
+                counting fish in
+                sonar videos. We identify sonar videos as a rich source of data for advancing low signal-to-noise
+                computer vision
+                applications and tackling domain generalization in multiple-object tracking (MOT) and counting. In
+                comparison to
+                existing MOT and counting datasets, which are largely restricted to videos of people and vehicles in
+                cities, CFC is
+                sourced from a natural-world domain where targets are not easily resolvable and appearance features
+                cannot be easily
+                leveraged for target re-identification. With over half a million annotations in over 1,500 videos
+                sourced from seven
+                different sonar cameras, CFC allows researchers to train MOT and counting algorithms and evaluate
+                generalization
+                performance at unseen test locations. We perform extensive baseline experiments and identify key
+                challenges and
+                opportunities for advancing the state of the art in generalization in MOT and counting.
+                <br>
+                <a href="https://arxiv.org/abs/2207.09295"><img class="inline-icon"
+                        style="height:1em;vertical-align:middle;" src="./assets/arxiv.svg" /></a>&nbsp;
+                <a href="https://github.com/visipedia/caltech-fish-counting"><img class="inline-icon"
+                        style="height:1em;vertical-align:middle;" src="./assets/github.svg" /></a>&nbsp;
+                <a class="togglebib" href="javascript:togglebib('CTFCTS')"><img class="inline-icon"
+                        style="height:1em;vertical-align:middle;" src="./assets/bibtex.svg" /></a>
+
+                <p class="bib">
+                    @inproceedings{cfc2022eccv,<br>
+                    author = {Kay, Justin and Kulits, Peter and Stathatos, Suzanne and Deng, Siqi and Young, Erik and
+                    Beery, Sara and Van<br>
+                    Horn, Grant and Perona, Pietro},<br>
+                    title = {The Caltech Fish Counting Dataset: A Benchmark for Multiple-Object Tracking and
+                    Counting},<br>
+                    booktitle = {European Conference on Computer Vision (ECCV)},<br>
+                    year = {2022}<br>
+                    }
+                </p>
+            </li>
+        </div>
+
+    </div>
+
+    <div class="publication-box">
+        <img src="publications/Automated_salmonid_thumbnail.png" style="max-width: 200px;" alt="Image"
+            class="publication-image">
+        <div class="publication-text">
+            <li id="ASCiSD">
+                <b>Automated Salmonid Counting in Sonar Data</b>
+                <br>
+                <i>Peter Kulits, Angelina Pan, Sara M Beer, Erik Young, Pietro Perona, Grant Van Horn</i>
+                <br>
+                <i>NeurIPS 2020 Workshop on Tackling Climate Change with Machine Learning</i>
+                <br>
+                The prosperity of salmonids is crucial for several ecological and economic functions. Accurately
+                counting spawning
+                salmonids during their seasonal migration is essential in monitoring threatened populations, assessing
+                the efficacy of
+                recovery strategies, guiding fishing season regulations, and supporting the management of commercial and
+                recreational
+                fisheries. While several different methods exist for counting river fish, they all rely heavily on human
+                involvement,
+                introducing a hefty financial and time burden. In this paper we present an automated fish counting
+                method that utilizes
+                data captured from ARIS sonar cameras to detect and track salmonids migrating in rivers. Our results
+                show that our fully
+                automated system has a 19.3% per-clip error when compared to human counting performance. There is room
+                to improve, but
+                our system can already decrease the amount of time field biologists and fishery managers need to spend
+                manually watching
+                ARIS clips.
+                <br>
+                <a href="https://www.climatechange.ai/papers/neurips2020/54"><img class="inline-icon"
+                        style="height:1em;vertical-align:middle;" src="./assets/link.svg" /></a>&nbsp;
+                <a href="https://s3.us-east-1.amazonaws.com/climate-change-ai/papers/neurips2020/54/paper.pdf"><img
+                        class="inline-icon" style="height:1em;vertical-align:middle;"
+                        src="./assets/arxiv.svg" /></a>&nbsp;
+                <!-- <a href="https://github.com/MAHobley/MCAC"><img class="inline-icon"
+                        style="height:1em;vertical-align:middle;" src="./assets/github.svg" /></a>&nbsp; -->
+                <a class="togglebib" href="javascript:togglebib('ASCiSD')"><img class="inline-icon"
+                        style="height:1em;vertical-align:middle;" src="./assets/bibtex.svg" /></a>
+
+                <p class="bib">
+                    @inproceedings{kulits2020automated,<br>
+                    title={Automated Salmonid Counting in Sonar Data},<br>
+                    author={Kulits, Peter and Pan, Angelina and Beery, Sara M and Young, Erik and Perona, Pietro and Van
+                    Horn, Grant},<br>
+                    booktitle={NeurIPS 2020 Workshop on Tackling Climate Change with Machine Learning},<br>
+                    url={https://www.climatechange.ai/papers/neurips2020/54},<br>
+                    year={2020}<br>
+                    }
+                </p>
+            </li>
+        </div>
+
+    </div>
+
+</body>
+<script language="JavaScript">
+    hideallbibs();
+</script>
+
+</html>

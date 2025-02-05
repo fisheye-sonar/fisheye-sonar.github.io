@@ -1,0 +1,381 @@
+* {
+  font-family: Nunito, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+.text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  line-height: 25px;
+}
+
+.responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: flex-start;
+}
+
+.container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: block;
+}
+
+.responsive-cell-block {
+  min-height: 75px;
+}
+
+.container {
+  max-width: 1380px;
+  margin-top: 80px;
+  margin-right: auto;
+  margin-bottom: 80px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-right: 30px;
+  padding-bottom: 0px;
+  padding-left: 30px;
+}
+
+.team-head-text {
+  font-size: 48px;
+  line-height: 50px;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 70px;
+  margin-left: 0px;
+}
+
+.name {
+  font-size: 18px;
+  margin-top: 11px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  font-weight: 700;
+}
+
+.position {
+  font-weight: 600;
+  margin-top: 5px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.institution {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+
+.readmore {
+  font-size: 12px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  color: rgb(121, 121, 121); 
+}
+
+
+.team-card-container {
+  width: 201px;
+  margin-top: 0px;
+  margin-right: 15px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+}
+
+.teamcard-container {
+  justify-content: space-evenly;
+}
+
+.team-img-wrapper {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.team-img {
+  width: 201px;
+  border-radius: 25px;
+
+}
+
+@media (max-width: 500px) {
+  .team-card-container {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .team-img {
+    width: 201px;
+
+  }
+}
+
+.arrow {
+  border: solid rgb(121, 121, 121);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.bottom-buffer { margin-bottom: 10px; }
+
+.container { margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; }
+
+.container:before, .container:after { content: " "; display: table; }
+
+.container:after { clear: both; }
+
+/* @media (min-width: 768px) { .container { width: 750px; } }
+
+@media (min-width: 992px) { .container { width: 930px; } }
+
+@media (min-width: 1200px) { .container { width: 930px; } }
+
+.container-fluid { margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; }
+
+.container-fluid:before, .container-fluid:after { content: " "; display: table; }
+
+.container-fluid:after { clear: both; }
+
+.row { margin-left: -15px; margin-right: -15px; }
+
+.row:before, .row:after { content: " "; display: table; }
+
+.row:after { clear: both; } */
+
+
+.collaborators_container{    display: flex;
+    /* align-items: center; */
+    padding: 20px;
+    width: 80%;
+    margin:0 auto;
+
+}
+
+
+
+.personel_container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 80%;
+    margin:0 auto;
+
+}
+
+.personel_container img {
+    max-width: 200px;
+    padding: 20px;
+}
+
+.personel_container-info {
+    font-size: 25px;
+    text-align: left;
+}
+
+.personel_container-text {
+    width: 80%;
+    margin:0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #00336e;
+    padding: 0 16px;
+    border-radius: 15px;
+
+}
+
+.topnav img {
+    height: 100px;
+}
+
+.topnav .nav-links {
+    display: flex;
+}
+
+.topnav a {
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+
+}
+.topnav .logo-text {
+    color: white;
+    margin-left: 10px;
+    font-size: 34px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: #00336e;
+    border-radius: 15px;
+
+}
+
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+    border-radius: 15px;
+
+}
+
+
+.text-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: left;
+}
+.image-container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.image-container img {
+    padding: 10px;
+}
+
+
+dl { margin-top: 0; margin-bottom: 21px; }
+
+dt, dd { line-height: 1.428571429; }
+
+dt { font-weight: bold; }
+
+dd { margin-left: 15pt; }
+
+.dl-horizontal dd:before, .dl-horizontal dd:after { content: " "; display: table; }
+
+.dl-horizontal dd:after { clear: both; }
+
+.PDF-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-column {
+    flex: 4;
+    padding-right: 20px;
+}
+
+.right-column {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.thumbnail {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.thumbnail img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100%;
+}
+
+.thumbnail p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.publication-box {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 80%;
+    margin: 0 auto;
+    border: 3px solid #00336e;
+    padding: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    border-radius: 25px;
+    background-color: white;
+    margin-bottom: 20px;
+
+
+
+}
+
+.publication-image {
+    /* max-height: 150px; */
+    margin-right: 20px;
+    /* border-radius: 15px; */
+
+}
+.publication-text {
+    border-radius: 0px;
+
+}
+
+
+.bib{
+    font-size: 16px;
+    font-family: monospace, monospace;
+    margin-top: 10px;
+    background-color: #f4f8fc;
+    border-radius: 5px;
+
+}
+
+li { display: inline-block; padding-left: 5px; padding-right: 5px; }
+
+.pre { font-family: Menlo, Monaco, Consolas, monospace; }

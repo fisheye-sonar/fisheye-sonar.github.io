@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" href="../styles.css">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FishEye: Newsletters</title>
+
+        </head>
+
+<!DOCTYPE html>
+<html>
+<body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("navbar.html", function () {
+                $("#navbar_newsletters").addClass("active");
+            });
+        });
+    </script>
+
+    <!--end of Navigation bar-->   
+    <div class="text-container">
+        <h2>Newsletters to be released here.</h2>
+
+    </div>
+<!-- <div class="PDF-container">
+    <div class="left-column">
+        <h2>Last Newsletter</h2>
+        <iframe src="./newsletters/EMPTY_NEWSLETTER_TO_DELETE.pdf" width="100%" height="1200px"></iframe>
+    </div>
+    <div class="right-column">
+        <h2>Previous Newsletters</h2>
+        <div class="thumbnail">
+            <a href="./newsletters/EMPTY_NEWSLETTER_TO_DELETE.pdf" download>
+                <img src="./newsletters/thumbnails/EMPTY_NEWSLETTER_TO_DELETE_thumbnail.png" alt="Newsletter 2" width="100%">
+            </a>
+            <p>Issue 1: XX Febuary XXXX</p>
+        </div>
+    </div>
+</div> -->
+
+</body>
+
+</html>

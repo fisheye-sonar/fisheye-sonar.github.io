@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/scripts.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FishEye</title>
+
+
+</head>
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("navbar.html", function () {
+                $("#navbar_home").addClass("active");
+            });
+        });
+    </script>
+    <!--end of Navigation bar-->
+
+
+    <div class="text-container">
+        <h2>Project Context</h2>
+        <p>
+        The use of sonar cameras to monitor salmon returning to spawn in watersheds from Alaska to California is a
+        favored
+        methodology due to its accuracy, ability to work at night, in highly turbid conditions, and unlike other
+        techniques,
+        does not result in any fish mortality. However, the adoption of sonar is currently constrained due its annual
+        operating
+        cost - the video must be viewed, and the fish counted, manually.
+        </p>
+        <p>
+
+        We are working to develop an affordable and automated as well as a robust and accurate system which will
+        automate this process. By improving salmon monitoring, the fishery agencies
+        responsible for the recovery of threatened salmon populations will be aided in their efforts, and the commercial
+        management of healthy salmon populations will be better able to assure future catch rates that are sustainable.
+        </p>
+
+    </div>
+<!-- 
+<div class="text-container">
+    <h2>News</h2>
+    <dl class="dl-horizontal">
+        <dt>27 January 2025</dt>
+        <dd>
+            Held a Stakeholder meeting with the California Department of Fish and Wildlife in Pasadena to discuss their methods and requirements.
+        </dd>
+    </dl>
+</div> -->
+</body>
+
+</html>
