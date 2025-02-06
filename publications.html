@@ -1,20 +1,54 @@
 <!DOCTYPE html>
-
-<head>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="./js/hidebib.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="../styles.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FishEye: Publications</title>
-
-
-</head>
-
-<!DOCTYPE html>
 <html>
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>FishEye: Publications</title>
+    <meta name="description" content="FishEye&#39;s home page.
+">
+
+    <!-- Bootstrap -->
+    <script async="" src="./files/async-ads.js"></script>
+    <script src="./files/hidebib.js" type="text/javascript"></script>
+
+    <script type="text/javascript" async="" src="./files/f.txt"></script>
+    <script type="text/javascript" async="" src="./files/ga.js"></script>
+    <script type="text/javascript" src="./files/jquery.min.js"></script>
+    <script type="text/javascript" src="./files/bootstrap.min.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./files/syntax.css">
+    <link rel="stylesheet" href="./files/styles.css">
+
+    <link rel="icon" href="./files/icon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./files/icon.ico" type="image/x-icon">
+
+
+    <script src="./files/cse_element__en.js" type="text/javascript"></script>
+    <link type="text/css" href="./files/default+en.css" rel="stylesheet">
+    <link type="text/css" href="./files/minimalist.css" rel="stylesheet">
+    <style>
+        .flipX video::-webkit-media-text-track-display {
+            transform: matrix(-1, 0, 0, 1, 0, 0) !important;
+        }
+
+        .flipXY video::-webkit-media-text-track-display {
+            transform: matrix(-1, 0, 0, -1, 0, 0) !important;
+        }
+
+        .flipXYX video::-webkit-media-text-track-display {
+            transform: matrix(1, 0, 0, -1, 0, 0) !important;
+        }
+    </style>
+</head>
+
+
 <body>
-    <!--Navigation bar-->
+
     <div id="nav-placeholder"></div>
     <script>
         $(function () {
@@ -23,17 +57,16 @@
             });
         });
     </script>
-    <!--end of Navigation bar-->
 
-    <div class="text-container">
+    <div class="mobile-only-box">
         <h2>Publications</h2>
-
     </div>
+
 
     <div class="publication-box">
         <img src="publications/CFwTRoSV_thumbnail.png" style="max-width: 200px;" alt="Image" class="publication-image">
         <div class="publication-text">
-            <li id="CFwTRoSV">
+            <div id="CFwTRoSV">
                 <b>Counting Fish with Temporal Representations of Sonar Video</b>
                 <br>
                 <i>Kai Van Brunt, Justin Kay Timm Haucke, Pietro Perona, Grant Van Horn, Sara Beery</i>
@@ -42,44 +75,46 @@
                     Behavior Tracking and Modeling</i>
                 <br>
                 Accurate estimates of salmon escapement—the number of fish migrating upstream to spawn—are key data for
-                con- servation
-                and fishery management. Existing methods for salmon counting using high-resolution imaging sonar hard-
-                ware are
-                non-invasive and compatible with computer vi- sion processing. Prior work in this area has utilized ob-
-                ject detection
-                and tracking based methods for automated salmon counting. However, these techniques remain in-
-                accessible to many sonar
-                deployment sites due to limited compute and connectivity in the field. We propose an alter- native
+                conservation
+                and fishery management. Existing methods for salmon counting using high-resolution imaging sonar
+                hardware are
+                non-invasive and compatible with computer vision processing. Prior work in this area has utilized object
+                detection
+                and tracking based methods for automated salmon counting. However, these techniques remain inaccessible
+                to many sonar
+                deployment sites due to limited compute and connectivity in the field. We propose an alternative
                 lightweight computer
-                vision method for fish count- ing based on analyzing echograms—temporal representa- tions that compress
+                vision method for fish counting based on analyzing echograms—temporal representations that compress
                 several hundred
                 frames of imaging sonar video into a single image. We predict upstream and downstream counts within
                 200-frame time
                 windows directly from echograms using a ResNet-18 model, and propose a set of domain-specific image
                 augmentations and a
-                weakly- supervised training protocol to further improve results. We achieve a count error of 23% on
+                weakly-supervised training protocol to further improve results. We achieve a count error of 23% on
                 representative data
                 from the Kenai River in Alaska, demonstrating the feasibility of our approach.
                 <br>
                 <!-- <a href="!!!PROJECTPAGELINK!!!"><img class="inline-icon" style="height:1em;vertical-align:middle;"
-                            src="./assets/link.svg" /></a>&nbsp;
-                    <a href="!!!ARXIVLINK!!!"><img class="inline-icon" style="height:1em;vertical-align:middle;"
-                            src="./assets/arxiv.svg" /></a>&nbsp;
-                    <a href="!!!GITHUBLINK!!!"><img class="inline-icon" style="height:1em;vertical-align:middle;"
-                            src="./assets/github.svg" /></a>&nbsp; -->
+                                src="./assets/link.svg" /></a>&nbsp;
+                        <a href="!!!ARXIVLINK!!!"><img class="inline-icon" style="height:1em;vertical-align:middle;"
+                                src="./assets/arxiv.svg" /></a>&nbsp;
+                        <a href="!!!GITHUBLINK!!!"><img class="inline-icon" style="height:1em;vertical-align:middle;"
+                                src="./assets/github.svg" /></a>&nbsp; -->
                 <a class="togglebib" href="javascript:togglebib('CFwTRoSV')"><img class="inline-icon"
                         style="height:1em;vertical-align:middle;" src="./assets/bibtex.svg" /></a>
-                <p class="bib">
+                <div class="bib">
                     @inproceedings{vanbrunt2024Counting,<br>
                     title={Counting Fish with Temporal Representations of Sonar Video},<br>
                     author={Van Brunt, Kai and Kay, Justin and Haucke, Timm and Perona, Pietro and Van Horn, Grant and
                     Beery, Sara },<br>
                     year={2024},<br>
-                    booktitle={uropean Conference on Computer Vision (ECCV) 2024 Workshop on CV4Animals: Computer Vision for Animal
+                    booktitle={uropean Conference on Computer Vision (ECCV) 2024 Workshop on CV4Animals: Computer Vision
+                    for
+                    Animal
                     Behavior Tracking and Modeling}<br>
                     }
-                </p>
-            </li>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -89,7 +124,7 @@
         <img src="publications/align_and_distill_thumbnail.png" style="max-width: 200px;" alt="Image"
             class="publication-image">
         <div class="publication-text">
-            <li id="alignanddistill">
+            <div id="alignanddistill">
                 <b>Align and Distill: Unifying and Improving Domain Adaptive Object Detection</b>
                 <br>
                 <i>Justin Kay, Timm Haucke, Suzanne Stathatos, Siqi Deng, Erik Young, Pietro Perona, Sara Beery, Grant
@@ -144,7 +179,7 @@
                     primaryClass={cs.CV}<br>
                     }
                 </p>
-            </li>
+            </div>
         </div>
 
     </div>
@@ -152,7 +187,7 @@
         <img src="publications/Unsupervised_Domain_Adaptation_case_study_thumbnail.png" style="max-width: 200px;"
             alt="Image" class="publication-image">
         <div class="publication-text">
-            <li id="unsup_dom_case_study">
+            <div id="unsup_dom_case_study">
                 <b>Unsupervised Domain Adaptation in the Real World: A Case Study in Sonar Video</b>
                 <br>
                 <i>Justin Kay, Suzanne Stathatos, Siqi Deng, Erik Young, Pietro Perona, Sara Beery, Grant Van Horn</i>
@@ -197,7 +232,7 @@
                     Deployment}<br>
                     }
                 </p>
-            </li>
+            </div>
         </div>
 
     </div>
@@ -205,7 +240,7 @@
         <img src="publications/caltech_fish_counting_dataset_thumbnail.png" style="max-width: 200px;" alt="Image"
             class="publication-image">
         <div class="publication-text">
-            <li id="CTFCTS">
+            <div id="CTFCTS">
                 <b>The Caltech Fish Counting Dataset: A Benchmark for Multiple-Object Tracking and Counting</b>
                 <br>
                 <i>Justin Kay, Peter Kulits, Suzanne Stathatos, Siqi Deng, Erik Young, Sara Beery, Grant Van Horn,
@@ -223,7 +258,7 @@
                 cities, CFC is
                 sourced from a natural-world domain where targets are not easily resolvable and appearance features
                 cannot be easily
-                leveraged for target re-identification. With over half a million annotations in over 1,500 videos
+                leveraged for target reidentification. With over half a million annotations in over 1,500 videos
                 sourced from seven
                 different sonar cameras, CFC allows researchers to train MOT and counting algorithms and evaluate
                 generalization
@@ -249,7 +284,7 @@
                     year = {2022}<br>
                     }
                 </p>
-            </li>
+            </div>
         </div>
 
     </div>
@@ -258,7 +293,7 @@
         <img src="publications/Automated_salmonid_thumbnail.png" style="max-width: 200px;" alt="Image"
             class="publication-image">
         <div class="publication-text">
-            <li id="ASCiSD">
+            <div id="ASCiSD">
                 <b>Automated Salmonid Counting in Sonar Data</b>
                 <br>
                 <i>Peter Kulits, Angelina Pan, Sara M Beer, Erik Young, Pietro Perona, Grant Van Horn</i>
@@ -289,7 +324,7 @@
                         class="inline-icon" style="height:1em;vertical-align:middle;"
                         src="./assets/arxiv.svg" /></a>&nbsp;
                 <!-- <a href="https://github.com/MAHobley/MCAC"><img class="inline-icon"
-                        style="height:1em;vertical-align:middle;" src="./assets/github.svg" /></a>&nbsp; -->
+                            style="height:1em;vertical-align:middle;" src="./assets/github.svg" /></a>&nbsp; -->
                 <a class="togglebib" href="javascript:togglebib('ASCiSD')"><img class="inline-icon"
                         style="height:1em;vertical-align:middle;" src="./assets/bibtex.svg" /></a>
 
@@ -299,16 +334,26 @@
                     author={Kulits, Peter and Pan, Angelina and Beery, Sara M and Young, Erik and Perona, Pietro and Van
                     Horn, Grant},<br>
                     booktitle={NeurIPS 2020 Workshop on Tackling Climate Change with Machine Learning},<br>
-                    url={https://www.climatechange.ai/papers/neurips2020/54},<br>
                     year={2020}<br>
                     }
                 </p>
-            </li>
+            </div>
         </div>
 
     </div>
+    </div>
 
+    <table cellspacing="0" cellpadding="0" role="presentation" class="gstl_50 gssb_c"
+        style="width: 200px; display: none; top: 165px; position: absolute; left: 483px;">
+        <tbody>
+            <tr>
+                <td class="gssb_f"></td>
+                <td class="gssb_e" style="width: 100%;"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
+
 <script language="JavaScript">
     hideallbibs();
 </script>
