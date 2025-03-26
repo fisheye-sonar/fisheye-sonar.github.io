@@ -268,7 +268,9 @@ th {
     page-break-after: avoid;
   }
   .navbar {
-    display: none;
+    /* display: none; */
+    display: flex;
+    align-items: center;
   }
   .btn > .caret,
   .dropup > .btn > .caret {
@@ -288,6 +290,14 @@ th {
   .table-bordered td {
     border: 1px solid #ddd !important;
   }
+}
+
+.navbar-logo {
+    height: 80%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 @font-face {
@@ -5081,7 +5091,9 @@ tbody.collapse.in {
 .navbar-header:before,
 .navbar-header:after {
   content: " ";
-  display: table;
+  /* display: table; */
+      display: flex;
+    align-items: center;
 }
 
 .navbar-header:after {
@@ -5209,6 +5221,20 @@ tbody.collapse.in {
 }
 
 .navbar-brand {
+    /* display: flex;
+    align-items: center;
+    padding-left: 100px;
+    height: 100%;
+    font-size: 19px; */
+    padding-left: 100px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+/* .navbar-brand {
   float: left;
   padding: 14.5px 15px;
   font-size: 19px;
@@ -5223,7 +5249,7 @@ tbody.collapse.in {
 
 .navbar-brand > img {
   display: block;
-}
+} */
 /* @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
@@ -8527,6 +8553,42 @@ img.grayscale {
   }
 }
 
+.index-image-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap between images as needed */
+  margin-top: 20px;
+}
+
+.index-image-item {
+  text-align: center;
+}
+
+.index-image-item img {
+  max-height: 500px; 
+}
+
+.index-caption {
+  color: lightgrey;
+  font-size: 0.9em;
+  margin-top: 5px;
+  font-size: 5pt;
+  text-align: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .index-image-container {
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center images */
+  }
+
+  .index-image-item img {
+    height: auto; /*Adjust height for smaller screens*/
+    width: 80%; /* Make images responsive */
+
+  }
+}
 
 .image-container {
   width: 80%;
