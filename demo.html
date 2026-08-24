@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FishEye | Cloud demo</title>
+    <link rel="stylesheet" href="./files/styles.css">
+    <link rel="stylesheet" href="./files/release.css">
+    <link rel="alternate icon" href="/favicon.png" type="image/png">
+    <link rel="icon" href="/logo/fisheye_1769ff.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <link rel="mask-icon" href="/logo/fisheye_black.svg" color="#1769ff">
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <script src="./files/jquery.min.js"></script>
+    <script src="./files/bootstrap.min.js"></script>
+    <script>$(function () { $("#nav-placeholder").load("navbar.html", function () { $("#navbar_demo").addClass("active"); }); });</script>
+    <main class="release-shell release-page">
+        <section class="release-page-intro">
+            <p class="release-kicker">Cloud demo</p>
+            <h1>A faster first pass<br><span>for ecologists.</span></h1>
+            <p class="release-lede">Upload a short ARIS or DIDSON file and see how FishEye helps prepare annotations for
+                your existing workflow. You stay responsible for reviewing, validating, and correcting the results.</p>
+        </section>
+        <section class="demo-panel">
+            <div class="demo-panel-heading"><span class="status-dot"></span>
+                <div><strong>FishEye cloud workspace</strong><small>Demo access is being prepared for release.</small>
+                </div>
+            </div>
+            <div class="demo-dropzone"><span class="drop-icon">+</span><strong>Drop a sonar file
+                    here</strong><small>ARIS or DIDSON files</small><button type="button" disabled>Upload file</button>
+            </div>
+            <div class="demo-note">The browser demo uses shared computing resources. FishEye accelerates annotation; it
+                does not replace expert review. For private datasets and repeatable processing, use the desktop app.
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FishEye | Download</title>
+    <link rel="stylesheet" href="./files/styles.css">
+    <link rel="stylesheet" href="./files/release.css">
+    <link rel="alternate icon" href="/favicon.png" type="image/png">
+    <link rel="icon" href="/logo/fisheye_1769ff.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+    <link rel="mask-icon" href="/logo/fisheye_black.svg" color="#1769ff">
+</head>
+
+<body>
+    <div id="nav-placeholder"></div>
+    <script src="./files/jquery.min.js"></script>
+    <script src="./files/bootstrap.min.js"></script>
+    <script>$(function () { $("#nav-placeholder").load("navbar.html", function () { $("#navbar_download").addClass("active"); }); });</script>
+    <main class="release-shell release-page">
+        <section class="release-page-intro">
+            <p class="release-kicker">Desktop app</p>
+            <h1>Run FishEye<br><span>where you work.</span></h1>
+            <p class="release-lede">Process ARIS and DIDSON files locally, prepare annotations for your existing
+                ArisFish workflow, and keep review and correction in the hands of your team.</p>
+        </section>
+        <section class="download-grid" id="download-options">
+            <article class="download-card" data-platform="mac">
+                <div class="platform-mark">macOS</div>
+                <h2>FishEye for Mac</h2>
+                <p>Native desktop processing for Apple Silicon Macs, including M1 through M4.</p><a
+                    class="release-button release-button-primary" href="#mac-download">Download for Mac <span
+                        aria-hidden="true">-&gt;</span></a><small>Release package coming soon</small>
+            </article>
+            <article class="download-card" data-platform="windows">
+                <div class="platform-mark">Windows</div>
+                <h2>FishEye for Windows</h2>
+                <p>A local workflow for Windows field stations and research teams. A dedicated GPU is recommended for
+                    faster processing.</p><a class="release-button release-button-quiet"
+                    href="#windows-download">Download for Windows <span
+                        aria-hidden="true">-&gt;</span></a><small>Release package coming soon</small>
+            </article>
+        </section>
+        <p class="download-footnote">Need a hosted workflow? <a href="./demo.html">Try the cloud demo</a> instead.</p>
+        <section class="machine-requirements">
+            <div>
+                <p class="release-kicker">Before you install</p>
+                <h2>Machine recommendations</h2>
+                <p>FishEye is designed to fit into an ecologist's existing workflow. These are the current platform
+                    notes for the release builds.</p>
+            </div>
+            <dl class="requirements-list">
+                <div>
+                    <dt>macOS</dt>
+                    <dd>Apple Silicon Mac required: M1, M2, M3, or M4. Intel Macs are not supported by the current
+                        build.</dd>
+                </div>
+                <div>
+                    <dt>Windows</dt>
+                    <dd>Windows field stations are supported. A dedicated GPU is recommended for faster processing. The
+                        installer can download additional files for GPU acceleration.</dd>
+                </div>
+                <div>
+                    <dt>Internet</dt>
+                    <dd>Required during Windows setup when downloading GPU acceleration files. Local processing is
+                        available after installation.</dd>
+                </div>
+                <div>
+                    <dt>Input files</dt>
+                    <dd>ARIS and DIDSON sonar files. Outputs are prepared for existing ArisFish workflows, where they
+                        can be validated and corrected.</dd>
+                </div>
+            </dl>
+        </section>
+        <section class="setup-video">
+            <div class="video-copy">
+                <p class="release-kicker">Setup + demonstration</p>
+                <h2>See FishEye in the workflow.</h2>
+                <p>Watch the setup, first run, and review process from sonar file to validated output.</p>
+            </div>
+            <div class="video-placeholder">YouTube setup video coming soon</div>
+        </section>
+    </main>
+    <script>
+        (function () {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const detectedPlatform = userAgent.includes('windows') ? 'windows' : userAgent.includes('mac') ? 'mac' : null;
+            const options = document.getElementById('download-options');
+            const cards = Array.from(options.querySelectorAll('[data-platform]'));
+            const detectedCard = cards.find(card => card.dataset.platform === detectedPlatform);
+            if (!detectedCard) return;
+            const otherCard = cards.find(card => card !== detectedCard);
+            options.prepend(detectedCard);
+            detectedCard.classList.add('download-card-detected');
+            detectedCard.querySelector('.release-button').classList.replace('release-button-quiet', 'release-button-primary');
+            otherCard.querySelector('.release-button').classList.replace('release-button-primary', 'release-button-quiet');
+            detectedCard.querySelector('.platform-mark').textContent += ' / YOUR PLATFORM';
+        }());
+    </script>
+</body>
+
+</html>
