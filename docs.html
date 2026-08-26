@@ -82,6 +82,10 @@
                 return sectionNames[section] || titleFromFilename(section);
             }
 
+            function slugFromValue(value) {
+                return value.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase();
+            }
+
             function showError(message) {
                 content.innerHTML = `<div class="docs-error"><strong>Documentation unavailable</strong><p>${message}</p><a href="https://github.com/${repository}/tree/${branch}/docs" target="_blank" rel="noopener">Open the docs on GitHub -&gt;</a></div>`;
                 nav.innerHTML = '<div class="docs-loading">Try again from GitHub</div>';
@@ -92,6 +96,27 @@
                 article.id = documentData.slug;
                 article.className = 'docs-article';
                 article.innerHTML = marked.parse(documentData.markdown, { breaks: true, headerIds: false, mangle: false });
+
+                article.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(heading => {
+                    heading.id = `${documentData.slug}--${slugFromValue(heading.textContent)}`;
+                });
+
+                article.querySelectorAll('a[href]').forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href.startsWith('#')) {
+                        link.href = `#${documentData.slug}--${slugFromValue(decodeURIComponent(href.slice(1)))}`;
+                        return;
+                    }
+
+                    const resolved = new URL(href, `https://docs.fisheye.local/${documentData.path}`);
+                    const targetPath = decodeURIComponent(resolved.pathname.slice(1));
+                    if (resolved.hostname !== 'docs.fisheye.local' || !targetPath.startsWith(docsRoot) || !targetPath.endsWith('.md')) return;
+
+                    const targetSlug = slugFromValue(targetPath);
+                    const headingSlug = resolved.hash ? `--${slugFromValue(decodeURIComponent(resolved.hash.slice(1)))}` : '';
+                    link.href = `#${targetSlug}${headingSlug}`;
+                });
+
                 content.appendChild(article);
             }
 
@@ -128,7 +153,7 @@
                         const parts = item.path.split('/');
                         const section = removeOrderPrefix(parts[1]);
                         const filename = parts[parts.length - 1];
-                        return { markdown: await response.text(), path: item.path, section, title: titleFromFilename(filename), slug: item.path.replace(/[^a-z0-9]+/gi, '-').toLowerCase() };
+                        return { markdown: await response.text(), path: item.path, section, title: titleFromFilename(filename), slug: slugFromValue(item.path) };
                     }));
                     documents.sort((a, b) => a.path > b.path ? 1 : -1);
                     content.innerHTML = '';

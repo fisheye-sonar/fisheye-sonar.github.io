@@ -637,6 +637,14 @@
   margin: 27px 0 10px;
   font-size: 17px;
 }
+.docs-article h1[id],
+.docs-article h2[id],
+.docs-article h3[id],
+.docs-article h4[id],
+.docs-article h5[id],
+.docs-article h6[id] {
+  scroll-margin-top: 28px;
+}
 .docs-article p,
 .docs-article li {
   color: #4d6379;
