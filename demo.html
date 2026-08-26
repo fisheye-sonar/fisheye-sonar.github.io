@@ -13,7 +13,7 @@
     <link rel="mask-icon" href="/logo/fisheye_black.svg" color="#1769ff">
 </head>
 
-<body>
+<body class="release-background">
     <div id="nav-placeholder"></div>
     <script src="./files/jquery.min.js"></script>
     <script src="./files/bootstrap.min.js"></script>
@@ -26,16 +26,19 @@
                 your existing workflow. You stay responsible for reviewing, validating, and correcting the results.</p>
         </section>
         <section class="demo-panel">
-            <div class="demo-panel-heading"><span class="status-dot"></span>
-                <div><strong>FishEye cloud workspace</strong><small>Demo access is being prepared for release.</small>
+            <div class="demo-access">
+                <div class="demo-access-copy">
+                    <strong>Open the FishEye cloud demo</strong>
+                    <p>Sign in with your email address and access code. If you do not have a code, you can request one
+                        from the demo login page.</p>
                 </div>
+                <a class="release-button release-button-primary" href="https://3-129-17-74.sslip.io" target="_blank"
+                    rel="noopener">Launch cloud demo <span aria-hidden="true">-&gt;</span></a>
             </div>
-            <div class="demo-dropzone"><span class="drop-icon">+</span><strong>Drop a sonar file
-                    here</strong><small>ARIS or DIDSON files</small><button type="button" disabled>Upload file</button>
-            </div>
-            <div class="demo-note">The browser demo uses shared computing resources. FishEye accelerates annotation; it
-                does not replace expert review. For private datasets and repeatable processing, use the desktop app.
-            </div>
+            <div class="demo-note">The cloud demo supports one user at a time and a small number of files. It is
+                intended only to demonstrate the capabilities of the FishEye desktop apps. FishEye accelerates
+                annotation; it does not replace expert review. All outputs should be reviewed, validated, and corrected.
+                For private data, repeatable processing, and batch file processing, use the desktop app.</div>
         </section>
     </main>
 </body>

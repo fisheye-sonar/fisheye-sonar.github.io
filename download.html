@@ -13,7 +13,7 @@
     <link rel="mask-icon" href="/logo/fisheye_black.svg" color="#1769ff">
 </head>
 
-<body>
+<body class="release-background">
     <div id="nav-placeholder"></div>
     <script src="./files/jquery.min.js"></script>
     <script src="./files/bootstrap.min.js"></script>
@@ -23,23 +23,28 @@
             <p class="release-kicker">Desktop app</p>
             <h1>Run FishEye<br><span>where you work.</span></h1>
             <p class="release-lede">Process ARIS and DIDSON files locally, prepare annotations for your existing
-                ARISFish workflow, and keep review and correction in the hands of your team.</p>
+                ARISFish workflow, and keep review and correction in the hands of your team. <a
+                    class="release-inline-link" href="https://github.com/fisheye-sonar/fisheye-ui/releases">View
+                    releases on GitHub <span aria-hidden="true">-&gt;</span></a></p>
         </section>
         <section class="download-grid" id="download-options">
             <article class="download-card" data-platform="mac">
                 <div class="platform-mark">macOS</div>
                 <h2>FishEye for Mac</h2>
                 <p>Native desktop processing for Apple Silicon Macs, including M1 through M4.</p><a
-                    class="release-button release-button-primary" href="#mac-download">Download for Mac <span
-                        aria-hidden="true">-&gt;</span></a><small>Release package coming soon</small>
+                    class="release-button release-button-primary"
+                    href="https://github.com/fisheye-sonar/fisheye-ui/releases" data-extension=".dmg">Download for Mac
+                    <span aria-hidden="true">-&gt;</span></a><small class="release-download-status">Finding the latest
+                    installer...</small>
             </article>
             <article class="download-card" data-platform="windows">
                 <div class="platform-mark">Windows</div>
                 <h2>FishEye for Windows</h2>
                 <p>A local workflow for Windows field stations and research teams. A dedicated GPU is recommended for
                     faster processing.</p><a class="release-button release-button-quiet"
-                    href="#windows-download">Download for Windows <span
-                        aria-hidden="true">-&gt;</span></a><small>Release package coming soon</small>
+                    href="https://github.com/fisheye-sonar/fisheye-ui/releases" data-extension=".exe">Download for
+                    Windows <span aria-hidden="true">-&gt;</span></a><small class="release-download-status">Finding the
+                    latest installer...</small>
             </article>
         </section>
         <p class="download-footnote">Need a hosted workflow? <a href="./demo.html">Try the cloud demo</a> instead.</p>
@@ -88,6 +93,46 @@
     </main>
     <script>
         (function () {
+            const releasesUrl = 'https://github.com/fisheye-sonar/fisheye-ui/releases';
+            const releasesApiUrl = 'https://api.github.com/repos/fisheye-sonar/fisheye-ui/releases?per_page=10';
+            const downloadLinks = Array.from(document.querySelectorAll('[data-extension]'));
+
+            async function loadLatestInstallers() {
+                try {
+                    const response = await fetch(releasesApiUrl);
+                    if (!response.ok) throw new Error('GitHub releases unavailable');
+                    const releases = await response.json();
+                    downloadLinks.forEach(link => {
+                        const extension = link.dataset.extension;
+                        const release = releases.find(candidate => !candidate.draft && candidate.assets.some(asset => asset.name.toLowerCase().endsWith(extension)));
+                        const asset = release && release.assets.find(candidate => candidate.name.toLowerCase().endsWith(extension));
+                        const status = link.nextElementSibling;
+                        if (!asset) {
+                            status.textContent = 'Installer unavailable · View all GitHub releases';
+                            return;
+                        }
+                        link.href = asset.browser_download_url;
+                        const releaseDate = new Date(release.published_at).toLocaleDateString(undefined, {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                        });
+                        status.replaceChildren(
+                            document.createTextNode(`${release.name || release.tag_name} · Released ${releaseDate}`),
+                            document.createElement('br'),
+                            document.createTextNode(asset.name)
+                        );
+                    });
+                } catch (error) {
+                    downloadLinks.forEach(link => {
+                        link.href = releasesUrl;
+                        link.nextElementSibling.textContent = 'View all releases on GitHub';
+                    });
+                }
+            }
+
+            loadLatestInstallers();
+
             const userAgent = navigator.userAgent.toLowerCase();
             const detectedPlatform = userAgent.includes('windows') ? 'windows' : userAgent.includes('mac') ? 'mac' : null;
             const options = document.getElementById('download-options');
